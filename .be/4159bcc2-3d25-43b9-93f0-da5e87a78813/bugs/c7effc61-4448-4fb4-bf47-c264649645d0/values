@@ -26,21 +26,21 @@
 
 
 
-    "status": "ready", 
+    "status": "open", 
 
 
 
 
 
 
-    "summary": "Implement remote.c/git_remote_create_with_fetchspec as Remote.pm/create_with_fetchspec", 
+    "summary": "Implement remote.c/git_remote_delete as Remote.pm/delete", 
 
 
 
 
 
 
-    "time": "Sat, 09 Sep 2017 18:04:00 +0000"
+    "time": "Sat, 09 Sep 2017 23:29:51 +0000"
 
 
 
