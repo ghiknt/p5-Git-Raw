@@ -26,7 +26,40 @@ git checkout master
 git branch -v -a
 ```
 
-## License
+## Building
+
+```bash
+# Based on commands in .travis.yml
+#Prerequisites
+sudo apt-get install libtinfo-dev
+sudo apt-get install libreadline-dev 
+
+cpan
+install cpanminus
+
+cpanm --sudo  Term::ReadLine::Gnu 
+cpanm --sudo MooseX::Getopt
+cpanm --sudo PPI::XS
+cpanm --sudo Dist::Zilla~">= 5.0000, < 6.0000"
+cpanm --sudo --notest Dist::Zilla~">= 5.0000, < 6.0000"
+cpanm --sudo --notest  Dist::Zilla::PluginBundle::Author::ALEXBIO
+cpanm --sudo  Pod::Coverage::TrustPod
+cpanm --sudo  Devel::Cover::Report::Coveralls
+cpanm --sudo  Dist::Zilla::App::Command::cover
+dzil authordeps --missing
+   cpanm --sudo Dist::Zilla::Plugin::MetaProvides::Package
+   cpanm --sudo Dist::Zilla::Plugin::MinimumPerl
+dzil listdeps --missing
+
+
+cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+dzil build
+dzil install
+dzil cover -ignore_re ^deps -ignore_re CORE -ignore_re ^const -ignore_re curl -test 
+
+
+
+##   License
 
 * Upstream Authors:
     * Alessandro Ghedini <alexbio@cpan.org>
