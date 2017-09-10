@@ -54,13 +54,15 @@ dzil listdeps --missing
 
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 dzil build
-dzil install
 
 # Test
 NETWORK_TESTING=1 dzil test -ignore_re ^deps -ignore_re CORE -ignore_re ^const -ignore_re curl -test
 
 # Coverage
 dzil cover -ignore_re ^deps -ignore_re CORE -ignore_re ^const -ignore_re curl -test 
+
+# Install
+dzil install --install-command "cpanm --sudo ."
 ```
 
 
