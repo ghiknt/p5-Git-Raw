@@ -1,11 +1,11 @@
-# p5-Git-Raw locacl repository
+# p5-Git-Raw local repository
 
 
 ## Structure
 This is my local clone of Jacques Germishuys p5-Git-Raw project <https://github.com/jacquesg/p5-Git-Raw> to allow local changes.
 
 * Branches:
-    * master - My development branch.
+    * develop - My development branch.
         *  Includes a local Bugs Everywhere repository
     * upstream - Clone of current upstream project <https://github.com/jacquesg/p5-Git-Raw>
     * upstream-merge - Includes cherry picked updates from master for submission to upstream.
@@ -21,8 +21,8 @@ git branch -m master upstream
 git branch --set-upstream-to=github-jacquesg/master upstream
 git remote add github-ghiknt git@github.com:ghiknt/p5-Git-Raw.git
 git checkout -b upstream-merge github-ghiknt/master
-git branch master
-git checkout master
+git branch develop
+git checkout develop
 git branch -v -a
 ```
 
